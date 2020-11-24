@@ -25,20 +25,6 @@ LOREM_WORDS = (
 
 LOREM_VOWELS = 'aeyuio'
 
-LOREM_POSSIBILITIES = {
-    'paragraph': {
-        'name': 'Generate paragraph',
-        'description': 'Select to generate random paragraphs',
-        'query': 'paragraph', 
-    },
-    'sentence': {
-        'name': 'Generate sentence',
-        'description': 'Select to generate random sentences',
-        'query': 'sentence', 
-    },
-    'word': {
-        'name': 'Generate word',
-        'description': 'Select to generate random words',
-        'query': 'word', 
-    },
-}
+LOREM_POSSIBILITIES = [
+    'paragraph', 'sentence', 'word'
+];

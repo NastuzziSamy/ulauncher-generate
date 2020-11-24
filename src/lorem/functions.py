@@ -35,7 +35,6 @@ def get_lorem(name, *args, **kwargs):
     return {
         'paragraph': get_paragraph,
         'sentence': get_sentence,
-        'words': get_words,
         'word': get_word,
     }[name](*args, **kwargs)
 
@@ -75,13 +74,19 @@ def generate_word():
 
 
 def generate_words(words_count = 10):
-    return ' '.join([
+    return [
         generate_word() 
-    for _ in range(words_count)])
+    for _ in range(words_count)]
 
 
 def generate_sentence(words_count = 25):
-    sentence = generate_words(words_count)
+    words = generate_words(words_count)
+    rand = randint(0, 100)
+
+    if rand < len(words):
+        words[rand] += ','
+
+    sentence = ' '.join(words)
     
     return sentence.capitalize() + '.'
 
@@ -96,6 +101,5 @@ def generate_lorem(name, *args, **kwargs):
     return {
         'paragraph': generate_paragraph,
         'sentence': generate_sentence,
-        'words': generate_words,
         'word': generate_word,
     }[name](*args, **kwargs)

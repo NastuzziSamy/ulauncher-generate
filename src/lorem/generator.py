@@ -3,10 +3,6 @@ from src.lorem.functions import get_lorem, generate_lorem
 
 
 class LoremGenerator:
-    def show_defaults(self):
-        return LOREM_POSSIBILITIES.values();
-
-
     def generate_type(self, name):
         get = get_lorem(name)
         gen = generate_lorem(name)
@@ -24,10 +20,20 @@ class LoremGenerator:
             },
         ]
 
+
+    def show_defaults(self):
+        items = []
+        
+        for name in LOREM_POSSIBILITIES:
+            items += self.generate_type(name)
+
+        return items
+        
+
     def generate(self, args):
         gen_type = args.pop(0)
         
-        for (name, data) in LOREM_POSSIBILITIES.items():
+        for name in LOREM_POSSIBILITIES:
             if name.startswith(gen_type):
                 return self.generate_type(name)
 
