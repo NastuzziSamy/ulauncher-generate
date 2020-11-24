@@ -1,0 +1,61 @@
+{
+  "required_api_version": "^2.0.0",
+  "name": "Generate",
+  "description": "Generate lorem texts, passwords...",
+  "developer_name": "Samy NASTUZZI",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "generate_kw",
+      "type": "keyword",
+      "name": "Generate",
+      "description": "Generate lorem texts, passwords...",
+      "default_value": "gen"
+    },
+    {
+      "id": "default_password_caracters",
+      "type": "select",
+      "name": "Default password caracters",
+      "default_value": "all",
+      "options" : [
+        {
+          "text" : "Alpha numeric and special caracters",
+          "value" : "all"
+        },
+        {
+          "text" : "Alpha numeric",
+          "value" : "alpha_num"
+        },
+        {
+          "text" : "Low alpha numeric",
+          "value" : "low_alpha_num"
+        },
+        {
+          "text" : "Up alpha numeric",
+          "value" : "up_alpha_num"
+        },
+        {
+          "text" : "Alpha",
+          "value" : "alpha"
+        },
+        {
+          "text" : "Low alpha",
+          "value" : "low_alpha"
+        },
+        {
+          "text" : "Up alpha",
+          "value" : "up_alpha"
+        }
+      ]
+    },
+    {
+      "id": "special_caracters",
+      "type": "text",
+      "name": "Special caracters",
+      "default_value": " !#$%&()*+,-./:;=?@[\\]^_`{|}~"
+    }
+  ]
+}
